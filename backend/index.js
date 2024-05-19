@@ -25,6 +25,9 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
+// Handle preflight requests
+app.options('*', cors(corsOptions));
+
 
 // api
 app.use("/api/v1/user",userRoute);
